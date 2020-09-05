@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.contacts}>
+        
         <a href="www.instagram.com"><FaInstagram size={20}/> @mypawcar</a>
         <p><BsHouse/> Address goes here</p>
         <p><HiOutlineMail/>  wojcinska.natalia@gmail.com</p>
