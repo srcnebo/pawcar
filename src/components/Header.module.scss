@@ -1,32 +1,38 @@
 
-
-
-.header {
-  padding: 1rem 0 3rem;
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  max-width: 65rem;
+  margin: 0 auto;
+  z-index: 5;
 }
 
 .title {
   color: #8f2c2c;
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-decoration: none;
+  font-weight: 600;
+}
+.siteLogo{
+  display: inline-block;
 }
 
 .nav-list {
   display: flex;
   list-style-type: none;
   margin: 0;
+  align-items: center;
 }
 
 .nav-item {
-  color: #999999;
-  font-size: .9rem;
-  margin-right: 1.3rem;
+  color: #555555;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem;
   text-decoration: none;
   &:hover{
     color: #666666;
   }
-}
-
-.active-nav-item {
-  text-decoration: underline;
 }

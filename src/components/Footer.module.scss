@@ -1,3 +1,30 @@
 .footer {
+  width: 100%;
+  margin: auto;
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-top:1px solid #eeeeee;
+  color: #666666;
+  a{
+    color: #666666;
+    // text-decoration: none;
+  }
+}
+.contacts{
+  padding: 1rem;
+}
+.credits{
+  padding: .5rem;
+  font-size: .8rem;
+  border-top: 1px solid #eeeeee;
+  color: #d1d1d1; 
+  font-style: italic;
+  font-weight: 200;
+    a{
+      color: #c0c0c0;
+    }
 }

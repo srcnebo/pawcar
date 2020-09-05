@@ -1,13 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import HeaderStyles from "./Header.module.scss"
 
 const Header = () => {
-  return (
-    <header>
+  return (    
+    <header className={HeaderStyles.mainHeader}>
       <Link className={HeaderStyles.title} to="/">
-        <h1>Site Name</h1>
+        <h1 className={HeaderStyles.siteLogo}>Pawcar</h1>
       </Link>
 
       <nav>
@@ -15,54 +16,43 @@ const Header = () => {
           <li>
             <Link
               className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
               to="/"
             >
               Home
             </Link>
           </li>
           <li>
-            <Link
+            <AnchorLink
+              title="Our Services"
               className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
-              to="#"
+              to="/#services"
             >
               Services
-            </Link>
+            </AnchorLink>
           </li>
           <li>
-            <Link
+            <AnchorLink
               className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
-              to="/about"
+              to="/#about"
             >
-              About us
-            </Link>
+              About
+            </AnchorLink>
           </li>
           <li>
             <Link
               className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
-              to="#"
+              to="/gallery"
             >
-              Why Us?
+              Gallery
             </Link>
           </li>
           <li>
-            <Link
+            <AnchorLink
               className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
-              to="#"
+              to="/#contact"
             >
               Contact
-            </Link>
-            <Link
-              className={HeaderStyles.navItem}
-              activeClassName={HeaderStyles.activeNavItem}
-              to="/blog"
-            >
-              Blog
-            </Link>
+            </AnchorLink>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,26 @@
+.backgroundImage {
+  position: relative;
+  min-width: 100%;
+  min-height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.content{
+  position: absolute;
+  z-index: 10;
+  bottom: 80px;
+  margin: auto;
+  padding: 2.5rem 2rem;
+  color: #241f21;
+  font-size: 2.5rem;
+  background-color: #ffffffcc;
+  line-height: 1.5;
+  
+}
+.slogan{
+  text-align: center;
+}
+.subHeading{
+  font-size: 1.5rem;
+}

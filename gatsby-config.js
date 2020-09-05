@@ -5,6 +5,7 @@ module.exports = {
     author: "Steve Nebo"
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
