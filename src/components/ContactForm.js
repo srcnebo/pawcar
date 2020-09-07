@@ -87,7 +87,7 @@ const ContactForm = () => {
         }}
       >
         {props => (
-          <Form name="contact-demo" data-netlify={true}>
+          <Form name="pawcar-contact" data-netlify={true}>
             <CustomTextInput label="Name" name="name" type="text" placeholder="" />
             <CustomTextInput label="Email" name="email" type="email" placeholder="" />
             <CustomTextArea label="Message" name="message" placeholder="Type your message here..."/>
