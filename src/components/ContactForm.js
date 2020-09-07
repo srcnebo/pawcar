@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Formik, useField, Form} from 'formik'
 import * as Yup from 'yup'
 
 import FormStyles from "./ContactForm.module.scss"
 
+
+
 const CustomTextInput = ({label, ...props}) => {
   const [field, meta] = useField(props);
-
   return (
     <>
       <label htmlFor={props.id || props.name}>{label}</label>
@@ -20,7 +21,6 @@ const CustomTextInput = ({label, ...props}) => {
 
 const CustomTextArea = ({label, ...props}) => {
   const [field, meta] = useField(props);
-
   return (
     <>
       <label htmlFor={props.id || props.name}>{label}</label>
@@ -32,10 +32,21 @@ const CustomTextArea = ({label, ...props}) => {
   )
 }
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 
 const ContactForm = () => {
+  const [formActive, setFormActive] = useState(true)
+  
+
   return (
-      <Formik
+      <>
+        {formActive ? (
+          <Formik
         initialValues={{
           name: '',
           email: '',
@@ -53,12 +64,26 @@ const ContactForm = () => {
             .min(10, 'Please write a longer message')
             .required('Required')
         })}
-        onSubmit={(values, {setSubmitting, resetForm}) => {
-          setTimeout(()=>{
-            alert(JSON.stringify(values, null, 2));
-            resetForm();
-            setSubmitting(false);
-          }, 3000)
+        onSubmit={(values, actions) => {
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "pawcar-contact", ...values })
+            })
+            .then(() => {
+              // alert('Success');
+              setFormActive(false);
+              actions.resetForm()
+            })
+            .catch(() => {
+              alert('Error');
+            })
+            .finally(() => {
+              actions.setSubmitting(false);
+              setTimeout(()=>{
+                setFormActive(true)
+              }, 3000)
+            })
         }}
       >
         {props => (
@@ -70,6 +95,10 @@ const ContactForm = () => {
           </Form>
         )}
       </Formik>
+        ) : (
+          <span>Thank you for contacting us, we will reach out to you shortly</span>
+        )}
+      </>
   )
 }
 export default ContactForm
