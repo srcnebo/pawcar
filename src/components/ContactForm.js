@@ -96,7 +96,7 @@ const ContactForm = () => {
         )}
       </Formik>
         ) : (
-          <span>Thank you for contacting us, we will reach out to you shortly</span>
+          <span>Thank you for contacting us, we will reach out to you shortly!</span>
         )}
       </>
   )
