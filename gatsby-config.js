@@ -37,6 +37,21 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Oswald`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Archivo Narrow`,
+            variants: [`400`, `700`],
+          }
+        ]
+      }
     }
   ],
 }

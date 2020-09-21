@@ -21,39 +21,35 @@
 
 
 // Services
-
 .servicesWrapper{
   background-color: #f7f7f7;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 .services{
-  max-width: 1040px;
   margin: auto;
   color: #241f21;
 }
-.servicesGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4 1fr);
-  column-gap: 3rem;
-  row-gap: 5rem;
-  align-items: center;
-}
 
-.servicesGrid div:nth-child(4) {
-  grid-column: 1;
-  grid-row: 2;
-}
-.servicesGrid div:nth-child(8) {
-  grid-column: 1;
-  grid-row: 4;
+.servicesGrid{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 6rem;
+  min-height: 300px;
 }
 .servicesImage{
-  max-width: 31rem;
+  min-height: 18rem;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
-
-
+.servicesText{
+  max-width: 520px;
+  padding: 1rem 1rem;
+}
 
 // About Section
 .aboutWrapper{
@@ -61,28 +57,59 @@
   padding-bottom: 3rem;
 }
 .about{
-  max-width: 45rem;
+  max-width: 42rem;
   margin: auto;
   color: #241f21;
   text-align: center;
+  padding: 0 1rem;
+}
+.contentBody{
+  text-align: left;
 }
 // Why us Section
 .whyUs{
   max-width: 65rem;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 8rem;
   margin-bottom: 2rem;
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 2rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
   text-align: center;
 }
 
 // Contact section
 .contactWrapper{
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 1rem;
   min-height: 25rem;
   text-align: center;
+}
+
+@media (min-width: 768px){
+
+  .servicesGrid {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-height: 500px;
+  }
+  .reverseFlex > div:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  .servicesImage{
+    flex-basis: 50%;
+    min-height: 31rem;
+    min-width: 50%;
+  }
+  .servicesText{
+  padding: 1rem 3rem;
+  }
+
+  .whyUs{
+  padding-bottom: 2rem;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  text-align: center;
+  }
+
 }
