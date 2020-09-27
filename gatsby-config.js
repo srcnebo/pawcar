@@ -44,7 +44,7 @@ module.exports = {
         fonts: [
           {
             family: `Oswald`,
-            variants: [`400`, `700`],
+            variants: [`300`, `400`, `700`],
           },
           {
             family: `Archivo Narrow`,
