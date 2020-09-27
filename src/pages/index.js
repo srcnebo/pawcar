@@ -89,7 +89,7 @@ const IndexPage = () => {
                 <div key={i} className={IndexStyles.servicesGrid}>
                   <div className={IndexStyles.servicesImage} style={{backgroundImage:`url(${edge.node.image.resize.src})`}}></div>
                   <div>
-                    <div className={IndexStyles.servicesText}>
+                    <div className={IndexStyles.servicesText} id={edge.node.systemName}>
                       <h2 className={IndexStyles.sectionSubHeader}>{edge.node.title}</h2>
                       <div dangerouslySetInnerHTML={{ __html: edge.node.content.childMarkdownRemark.html }} className={IndexStyles.contentBody}></div>
                     </div>
