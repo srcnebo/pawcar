@@ -1,7 +1,10 @@
+@import "../styles/variables.scss";
+
+
 .backgroundImage {
   position: relative;
   min-width: 100%;
-  min-height: 70vh;
+  min-height: 85vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -12,15 +15,16 @@
   bottom: 80px;
   margin: auto;
   padding: 2.5rem 2rem;
-  color: #241f21;
-  font-size: 2.5rem;
-  background-color: #ffffffcc;
+  color: $color-navy;
+  font-size: $h1-size;
+  background-color: rgba($color-white, 0.5);
   line-height: 1.5;
   
 }
 .slogan{
+  font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 .subHeading{
-  font-size: 1.5rem;
+  font-size: $h2-size;
 }

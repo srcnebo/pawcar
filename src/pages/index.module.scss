@@ -1,19 +1,27 @@
+@import "../styles/variables.scss";
+
+
 
 .sectionHeader{
-  font-size: 2.5rem;
+  font-size: $h1-size;
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 4rem;
+  color: $color-navy;
+  font-family: 'Oswald', sans-serif;
 }
 .sectionSubHeader{
-  font-size: 1.5rem;
+  font-size: $h2-size;
   line-height: 2;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  color: $color-navy;
+  font-family: 'Oswald', sans-serif;
 }
 .contentBody{
-  font-size: 1.15rem;
-  line-height: 1.35;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color-navy;
 }
 .contentBody p:not(:last-child){
   margin-bottom: 1rem;
@@ -22,13 +30,11 @@
 
 // Services
 .servicesWrapper{
-  background-color: #f7f7f7;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 .services{
   margin: auto;
-  color: #241f21;
 }
 
 .servicesGrid{
@@ -53,13 +59,13 @@
 
 // About Section
 .aboutWrapper{
+  background-color: $background-secondary;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 .about{
   max-width: 42rem;
   margin: auto;
-  color: #241f21;
   text-align: center;
   padding: 0 1rem;
 }

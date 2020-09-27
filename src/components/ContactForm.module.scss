@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 form {
   display: flex;
   flex-direction: column;
@@ -12,7 +14,7 @@ label{
 }
 
 input, select, textarea {
-  font-size: 1rem;
+  font-size: $font-size;
   padding: 0.5rem;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
@@ -30,11 +32,12 @@ textarea{
 }
 
 button{
-  background: #1997bF;
+  background: $color-sky;
   padding: 10px;
   color: #ffffff;
   margin-top: 20px;
   border: none;
   border-radius: 3px;
-  font-size: 1.1rem;
+  font-size: $h2-size;
+  font-family: 'Archivo Narrow', sans-serif;
 }
