@@ -17,7 +17,7 @@ const Footer = () => {
       <div className={footerStyles.credits}>
         <div>
           <p>
-            Icon made by{" "}
+            Icons by{" "}
             <a
               href="https://www.flaticon.com/authors/mynamepong"
               title="mynamepong"
