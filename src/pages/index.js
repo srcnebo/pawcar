@@ -108,17 +108,17 @@ const IndexPage = () => {
         </div>
         <div className={IndexStyles.whyUs}>
           <div>
-            <BsAwardFill size={48} style={{fill:'#8f2c2c'}}/>
+            <BsAwardFill size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Pawcar Quality Control</h3>
             <p className={IndexStyles.contentBody}>We always insure that a product is free from any fault before the final purchase in order to eliminate any extra costs customers have to pay after delivery. We want you to enjoy your new purchase as soon as possible!</p>
           </div>
           <div>
-            <GiReceiveMoney size={48} style={{fill:'#8f2c2c'}}/>
+            <GiReceiveMoney size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3> 
             <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important so our customers don’t have to compromise on any of it. Your satisfaction is our priority!</p>
           </div>
           <div>
-            <FaHandshake size={48} style={{fill:'#8f2c2c'}}/>
+            <FaHandshake size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Trust</h3>
             <p className={IndexStyles.contentBody}>PAWCAR was est. in 2008 in Poland. Since then we have been serving customers from all over the world. It has been a learning experience to meet different challenging orders. Thank you for believing in us!</p>
           </div>
