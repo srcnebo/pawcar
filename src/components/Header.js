@@ -1,124 +1,134 @@
-import React from "react"
+import React,{ useState } from 'react'
 import { Link } from "gatsby"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { graphql, useStaticQuery } from "gatsby"
 
-
-import useWindowDimensions from "../hooks/windowDimension"
+import "../styles/bulma.scss"
 import HeaderStyles from "./Header.module.scss"
+import logo from '../assets/logo.png'
+
 
 
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulServices{
+        edges{
+          node{
+            title
+            systemName
+          }
+        }
+      }
+    }
+  `);
 
-  const { width } = useWindowDimensions();
+  const [isMenuActive, setIsMenuActive] = useState(false);
 
-  let navMenu;
-  if (width < 769) {
-    navMenu = (
-      <nav role="navigation">
 
-        <div className={HeaderStyles.menuToggle}>
-          <input 
-          type="checkbox"
-          />
+  const nameOrder = [
+      "truck",
+      "heavy",
+      "parts",
+      "import",
+    ];
 
-          <span></span>
-          <span></span>
-          <span></span>
-          
-          <ul className={HeaderStyles.mobileMenu}>
-            <a href="#"><li>Home1</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li className={HeaderStyles.lastChild}>Contact</li></a>
-          </ul>
-        </div>
-      </nav>)
-  } else {
-    navMenu = (<nav>
-        <ul className={HeaderStyles.navList}>
-          <li>
-            <Link
-              className={HeaderStyles.navItem}
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <AnchorLink
-              title="Our Services"
-              className={HeaderStyles.navItem}
-              to="/#services"
-            >
-              Services
-            </AnchorLink>
-          </li>
-          <li>
-            <AnchorLink
-              className={HeaderStyles.navItem}
-              to="/#about"
-            >
-              About
-            </AnchorLink>
-          </li>
-          <li>
-            <AnchorLink
-              className={HeaderStyles.navItem}
-              to="/#contact"
-            >
-              Contact
-            </AnchorLink>
-          </li>
-        </ul>
-      </nav>)
+  let servicesArray = [];
+
+  // Sort the array of objects based on nameOrder array
+  for (const service of data.allContentfulServices.edges) {
+    const inputIndex = nameOrder.findIndex(
+      (value) => value === service.node.systemName
+    );
+    if (inputIndex >= 0) {
+      servicesArray[inputIndex] = service;
+    }
   }
-  
+  // Filter empty elements
+  servicesArray = servicesArray.filter(() => true);
+
+  console.log(servicesArray);
+
 
   return (    
-    <header className={HeaderStyles.mainHeader}>
-      <Link className={HeaderStyles.title} to="/">
-        <h1 className={HeaderStyles.siteLogo}>Pawcar</h1>
-      </Link>
-      {navMenu}
-      {/* <nav>
-        <ul className={HeaderStyles.navList}>
-          <li>
-            <Link
-              className={HeaderStyles.navItem}
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <Link className="navbar-item" to="/">
+          <img src={logo} id="navbar-logo" alt="pawcar-logo"/>
+        </Link>
+
+        <div role="button" 
+        className={`navbar-burger burger ${isMenuActive ? "is-active" : ""}`} 
+        onClick={() => setIsMenuActive((prevIsMenuActive) => !prevIsMenuActive)} 
+        aria-label="menu" aria-expanded="false" data-target="mainNavBar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div id="mainNavBar" className={`navbar-menu ${isMenuActive ? "is-active" : ""}`}>
+        <div className="navbar-end">
+          <Link
+              className="navbar-item"
               to="/"
             >
               Home
-            </Link>
-          </li>
-          <li>
-            <AnchorLink
-              title="Our Services"
-              className={HeaderStyles.navItem}
-              to="/#services"
-            >
+          </Link>
+
+          <div className="navbar-item has-dropdown is-hoverable">
+            <div className="navbar-link" href="#">
               Services
-            </AnchorLink>
-          </li>
-          <li>
-            <AnchorLink
-              className={HeaderStyles.navItem}
-              to="/#about"
-            >
-              About
-            </AnchorLink>
-          </li>
-          <li>
-            <AnchorLink
-              className={HeaderStyles.navItem}
-              to="/#contact"
-            >
-              Contact
-            </AnchorLink>
-          </li>
-        </ul>
-      </nav> */}
-    </header>
+            </div>
+            <div className="navbar-dropdown">
+              <AnchorLink
+                title="Our Services"
+                className="navbar-item"
+                to={`#${servicesArray[0].node.systemName}`}
+              > 
+                {servicesArray[0].node.title}
+              </AnchorLink>
+              <AnchorLink
+                title="Agriculture and construction machinery"
+                className="navbar-item"
+                to={`#${servicesArray[1].node.systemName}`}
+              >
+                {servicesArray[1].node.title}
+              </AnchorLink>
+              <AnchorLink
+                title="Parts new and used"
+                className="navbar-item"
+                to={`#${servicesArray[2].node.systemName}`}
+              >
+                {servicesArray[2].node.title}
+              </AnchorLink>
+              <AnchorLink
+                title="Our Services"
+                className="navbar-item"
+                to={`#${servicesArray[3].node.systemName}`}
+              >
+                {servicesArray[3].node.title}
+              </AnchorLink>
+            </div>
+          </div>
+
+          <AnchorLink
+            className="navbar-item"
+            to="/#about"
+          >
+            About
+          </AnchorLink>
+          <AnchorLink
+            className="navbar-item"
+            to="/#contact"
+          >
+            Contact
+          </AnchorLink>
+          
+        </div>
+      </div>
+    </nav>
   )
 }
 
