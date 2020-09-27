@@ -4,7 +4,6 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { graphql, useStaticQuery } from "gatsby"
 
 import "../styles/bulma.scss"
-import HeaderStyles from "./Header.module.scss"
 import logo from '../assets/logo.png'
 
 
