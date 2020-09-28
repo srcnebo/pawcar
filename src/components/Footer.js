@@ -1,33 +1,46 @@
 import React from "react"
-import {HiOutlineMail} from "react-icons/hi"
-import {BsHouse} from "react-icons/bs"
-import {FaInstagram} from "react-icons/fa"
+import { graphql, useStaticQuery } from "gatsby"
+import {AiFillInstagram} from "react-icons/ai"
 
 import footerStyles from "./Footer.module.scss"
 
+
+
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulFooter{
+        address
+        postcode
+        city
+      }
+    }
+  `)
+
   return (
     <footer className={footerStyles.footer}>
-      <div className={footerStyles.contacts}>
-
-        <a href="www.instagram.com"><FaInstagram size={20}/> @mypawcar</a>
-        <p><BsHouse/> Address goes here</p>
-        <p><HiOutlineMail/>  wojcinska.natalia@gmail.com</p>
+      <div className={footerStyles.footerContainer}>
+        <div className={footerStyles.contacts}>
+          <p className={footerStyles.contactHeading}>Contact us:</p>
+          <p>{data.contentfulFooter.address}</p>
+          <p>{`${data.contentfulFooter.postcode} ${data.contentfulFooter.city}`}</p>
+          <a href="mailto:o.wojcinski@gmail.com">o.wojcinski@gmail.com</a>
+        </div>
+        <div className={footerStyles.social}>
+          <p className={footerStyles.contactHeading}>Follow us:</p>
+          <a href="www.instagram.com" aria-label="instagram"><AiFillInstagram size={30}/></a>
+        </div>
       </div>
       <div className={footerStyles.credits}>
         <div>
           <p>
-            Icons by{" "}
+            Designed and developed by{" "}
             <a
-              href="https://www.flaticon.com/authors/mynamepong"
-              title="mynamepong"
+              href="https://www.linkedin.com/in/snebo/"
+              title="Steven Nebo"
             >
-              mynamepong
+              Steven Nebo
             </a>{" "}
-            and{" "}
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-              Freepik
-            </a>
           </p>
         </div>
       </div>

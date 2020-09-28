@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 .footer {
   width: 100%;
   margin: auto;
@@ -11,20 +13,41 @@
   color: #666666;
   a{
     color: #666666;
-    // text-decoration: none;
   }
 }
-.contacts{
-  padding: 1rem;
+.footerContainer{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.social{
+  margin-top: 0.5rem;
+}
+
+.contactHeading{
+  font-family: 'Oswald', sans-serif;
+  font-size: $h2-size;
+  font-weight: 700;
 }
 .credits{
   padding: .5rem;
   font-size: .8rem;
   border-top: 1px solid #eeeeee;
-  color: #d1d1d1; 
   font-style: italic;
-  font-weight: 200;
-    a{
-      color: #c0c0c0;
-    }
+}
+
+@media (min-width: 480px){
+  .footerContainer{
+    width: 460px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .contacts{
+    text-align: left;
+  }
+  .social{
+    margin-top: 0;
+    text-align: right;
+  }
+  
 }
