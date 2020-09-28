@@ -5,8 +5,8 @@
 .sectionHeader{
   font-size: $h1-size;
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: $color-navy;
   font-family: 'Oswald', sans-serif;
 }
@@ -36,7 +36,6 @@
 .services{
   margin: auto;
 }
-
 .servicesGrid{
   display: flex;
   flex-direction: column;
@@ -108,14 +107,14 @@
     min-width: 50%;
   }
   .servicesText{
-  padding: 1rem 3rem;
+    padding: 1rem 3rem;
   }
 
   .whyUs{
-  padding-bottom: 2rem;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  text-align: center;
+    padding-bottom: 2rem;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    text-align: center;
   }
 
 }
