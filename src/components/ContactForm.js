@@ -88,6 +88,7 @@ const ContactForm = () => {
       >
         {props => (
           <Form name="pawcar-contact" data-netlify={true}>
+            <h2 className={FormStyles.formHeading}>Do you have questions or feedback? Don't hesitate to contact us.</h2>
             <CustomTextInput label="Name" name="name" type="text" placeholder="" />
             <CustomTextInput label="Email" name="email" type="email" placeholder="" />
             <CustomTextArea label="Message" name="message" placeholder="Type your message here..."/>
