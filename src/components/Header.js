@@ -38,8 +38,6 @@ const Header = () => {
   // Filter empty elements
   servicesArray = servicesArray.filter(() => true)
 
-  console.log(servicesArray)
-
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -109,10 +107,12 @@ const Header = () => {
               </AnchorLink>
             </div>
           </div>
-
           <AnchorLink className="navbar-item" to="/#about">
             About
           </AnchorLink>
+          <Link className="navbar-item" to="/gallery">
+            Gallery
+          </Link>
           <AnchorLink className="navbar-item" to="/#contact">
             Contact
           </AnchorLink>
