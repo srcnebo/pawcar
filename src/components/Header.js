@@ -1,79 +1,77 @@
-import React,{ useState } from 'react'
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { graphql, useStaticQuery } from "gatsby"
 
 import "../styles/bulma.scss"
-import logo from '../assets/logo.png'
-
-
-
+import logo from "../assets/logo.png"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulServices{
-        edges{
-          node{
+      allContentfulServices {
+        edges {
+          node {
             title
             systemName
           }
         }
       }
     }
-  `);
+  `)
 
-  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isMenuActive, setIsMenuActive] = useState(false)
 
+  const nameOrder = ["truck", "heavy", "parts", "import"]
 
-  const nameOrder = [
-      "truck",
-      "heavy",
-      "parts",
-      "import",
-    ];
-
-  let servicesArray = [];
+  let servicesArray = []
 
   // Sort the array of objects based on nameOrder array
   for (const service of data.allContentfulServices.edges) {
     const inputIndex = nameOrder.findIndex(
-      (value) => value === service.node.systemName
-    );
+      value => value === service.node.systemName
+    )
     if (inputIndex >= 0) {
-      servicesArray[inputIndex] = service;
+      servicesArray[inputIndex] = service
     }
   }
   // Filter empty elements
-  servicesArray = servicesArray.filter(() => true);
+  servicesArray = servicesArray.filter(() => true)
 
-  console.log(servicesArray);
+  console.log(servicesArray)
 
-
-  return (    
+  return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
-          <img src={logo} id="navbar-logo" alt="pawcar-logo"/>
+          <img src={logo} id="navbar-logo" alt="pawcar-logo" />
         </Link>
 
-        <div role="button" 
-        className={`navbar-burger burger ${isMenuActive ? "is-active" : ""}`} 
-        onClick={() => setIsMenuActive((prevIsMenuActive) => !prevIsMenuActive)} 
-        aria-label="menu" aria-expanded="false" data-target="mainNavBar">
+        <div
+          role="button"
+          className={`navbar-burger burger ${isMenuActive ? "is-active" : ""}`}
+          onClick={() => setIsMenuActive(prevIsMenuActive => !prevIsMenuActive)}
+          onKeyDown={() =>
+            setIsMenuActive(prevIsMenuActive => !prevIsMenuActive)
+          }
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="mainNavBar"
+          tabIndex={0}
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </div>
       </div>
 
-      <div id="mainNavBar" className={`navbar-menu ${isMenuActive ? "is-active" : ""}`}>
+      <div
+        id="mainNavBar"
+        className={`navbar-menu ${isMenuActive ? "is-active" : ""}`}
+      >
         <div className="navbar-end">
-          <Link
-              className="navbar-item"
-              to="/"
-            >
-              Home
+          <Link className="navbar-item" to="/">
+            Home
           </Link>
 
           <div className="navbar-item has-dropdown is-hoverable">
@@ -85,7 +83,7 @@ const Header = () => {
                 title="Our Services"
                 className="navbar-item"
                 to={`#${servicesArray[0].node.systemName}`}
-              > 
+              >
                 {servicesArray[0].node.title}
               </AnchorLink>
               <AnchorLink
@@ -112,19 +110,12 @@ const Header = () => {
             </div>
           </div>
 
-          <AnchorLink
-            className="navbar-item"
-            to="/#about"
-          >
+          <AnchorLink className="navbar-item" to="/#about">
             About
           </AnchorLink>
-          <AnchorLink
-            className="navbar-item"
-            to="/#contact"
-          >
+          <AnchorLink className="navbar-item" to="/#contact">
             Contact
           </AnchorLink>
-          
         </div>
       </div>
     </nav>
