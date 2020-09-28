@@ -1,16 +1,38 @@
 import React from 'react'
-import { Link } from "gatsby"
-import Head from '../components/Head'
+import { graphql, useStaticQuery } from "gatsby"
 
+import Head from '../components/Head'
 import Layout from '../components/Layout'
+import galleryStyles from "./gallery.module.scss"
+
 
 const Gallery = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulGallery{
+        gallery
+        images{
+          resize(width:500, height:500 ){
+            src
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Layout>
       <Head title="Home"/>
-      <h1>This is the Gallery page</h1>
-      <p><Link to="https://www.google.com">Go to google</Link></p>
+      <div className={galleryStyles.galleryContainer}>
+        <h2 className={galleryStyles.galleryHeading}>{data.contentfulGallery.gallery}</h2>
+        <div className={galleryStyles.galleryGrid}>
+          {data.contentfulGallery.images.map((image,i) => (
+            <div key={i}>
+              <img src={image.resize.src} alt={`portfolioItem ${i}`}/>
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }
