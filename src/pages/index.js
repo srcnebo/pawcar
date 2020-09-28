@@ -18,7 +18,7 @@ const IndexPage = () => {
         slogan
         subHeading
         heroImage{
-          resize (width: 1920, height: 900){
+          resize (width: 1920, height: 1000){
             src
           }
         }
