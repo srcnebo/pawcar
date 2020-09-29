@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className={footerStyles.social}>
           <p className={footerStyles.contactHeading}>Follow us:</p>
-          <a href="www.instagram.com" aria-label="instagram"><AiFillInstagram size={30}/></a>
+          <a href="https://www.instagram.com/mypawcar" aria-label="instagram"><AiFillInstagram size={30}/></a>
         </div>
       </div>
       <div className={footerStyles.credits}>
