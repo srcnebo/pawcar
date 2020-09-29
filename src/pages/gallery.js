@@ -12,7 +12,7 @@ const Gallery = () => {
       contentfulGallery{
         gallery
         images{
-          resize(width:500, height:500 ){
+          resize(width:600, height:600 ){
             src
           }
         }
