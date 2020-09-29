@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className={footerStyles.social}>
           <p className={footerStyles.contactHeading}>Follow us:</p>
-          <a href="https://www.instagram.com/mypawcar" aria-label="instagram"><AiFillInstagram size={30}/></a>
+          <a href="https://www.instagram.com/mypawcar" aria-label="instagram" target="_blank" rel="noopener noreferrer"><AiFillInstagram size={30}/></a>
         </div>
       </div>
       <div className={footerStyles.credits}>
@@ -37,6 +37,7 @@ const Footer = () => {
             Designed and developed by{" "}
             <a
               href="https://www.linkedin.com/in/snebo/"
+              target="_blank"
               title="Steven Nebo"
             >
               Steven Nebo
