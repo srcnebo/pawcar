@@ -10,9 +10,9 @@
   text-align: center;
   background-color: #f7f7f7;
   border-top:1px solid #eeeeee;
-  color: #666666;
+  color: $color-navy;
   a{
-    color: #666666;
+    color: $color-navy;;
   }
 }
 .footerContainer{
@@ -24,7 +24,7 @@
 }
 
 .contactHeading{
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: $h2-size;
   font-weight: 700;
 }

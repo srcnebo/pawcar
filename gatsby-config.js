@@ -43,13 +43,9 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Oswald`,
-            variants: [`300`, `400`, `700`],
+            family: `Poppins`,
+            variants: [`400`, `500`],
           },
-          {
-            family: `Archivo Narrow`,
-            variants: [`400`, `700`],
-          }
         ]
       }
     }

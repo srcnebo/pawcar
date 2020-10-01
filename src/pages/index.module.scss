@@ -1,14 +1,15 @@
 @import "../styles/variables.scss";
 
 
-
 .sectionHeader{
   font-size: $h1-size;
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: $color-navy;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 .sectionSubHeader{
   font-size: $h2-size;
@@ -16,7 +17,8 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: $color-navy;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 .contentBody{
   font-size: $font-size;
@@ -30,7 +32,7 @@
 
 // Services
 .servicesWrapper{
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 .services{
@@ -52,15 +54,14 @@
   background-position: center center;
 }
 .servicesText{
-  max-width: 520px;
+  max-width: 640px;
   padding: 1rem 1rem;
 }
 
 // About Section
 .aboutWrapper{
-  background-color: $background-secondary;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 .about{
   max-width: 42rem;
@@ -68,16 +69,14 @@
   text-align: center;
   padding: 0 1rem;
 }
-.contentBody{
-  text-align: left;
-}
+
 // Why us Section
 .whyUs{
   max-width: 65rem;
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
@@ -86,7 +85,7 @@
 
 // Contact section
 .contactWrapper{
-  padding: 3rem 1rem;
+  padding: 1rem 1rem 3rem;
   min-height: 25rem;
   text-align: center;
 }
@@ -97,6 +96,9 @@
     flex-wrap: nowrap;
     flex-direction: row;
     min-height: 500px;
+  }
+  .reverseFlex{
+    margin-top: 3rem;
   }
   .reverseFlex > div:nth-child(even){
     flex-direction: row-reverse;
@@ -113,7 +115,7 @@
   .whyUs{
     padding-bottom: 2rem;
     flex-wrap: nowrap;
-    gap: 1rem;
+    gap: 2rem;
     text-align: center;
   }
 

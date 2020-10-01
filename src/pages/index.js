@@ -80,6 +80,30 @@ const IndexPage = () => {
       <Head title="Home"/>
       <Hero slogan={data.contentfulHero.slogan} image={data.contentfulHero.heroImage.resize.src} subHeading={data.contentfulHero.subHeading}/>
 
+      <section id="about" className={IndexStyles.aboutWrapper}>
+        <div className={IndexStyles.about}>
+          <h1 className={IndexStyles.sectionHeader}>{data.contentfulAbout.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: data.contentfulAbout.content.childMarkdownRemark.html}} className={IndexStyles.contentBody}></div>
+        </div>
+        <div className={IndexStyles.whyUs}>
+          <div>
+            <BsAwardFill size={48} style={{fill:'#1D1D2C'}}/>
+            <h3 className={IndexStyles.sectionSubHeader}>Quality Control</h3>
+            <p className={IndexStyles.contentBody}>We always insure that a product is free from any fault before the final purchase in order to eliminate any extra costs customers have to pay after delivery. We want you to enjoy your new purchase as soon as possible!</p>
+          </div>
+          <div>
+            <GiReceiveMoney size={48} style={{fill:'#1D1D2C'}}/>
+            <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3> 
+            <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important so our customers don’t have to compromise on any of it. Your satisfaction is our priority!</p>
+          </div>
+          <div>
+            <FaHandshake size={48} style={{fill:'#1D1D2C'}}/>
+            <h3 className={IndexStyles.sectionSubHeader}>Trust</h3>
+            <p className={IndexStyles.contentBody}>PAWCAR was est. in 2008 in Poland. Since then we have been serving customers from all over the world. It has been a learning experience to meet different challenging orders. Thank you for believing in us!</p>
+          </div>
+        </div>
+      </section>
+
       <section id="services" className={IndexStyles.servicesWrapper}>
         <div className={IndexStyles.services}>
           <h1 className={IndexStyles.sectionHeader}>Our Services</h1>
@@ -101,31 +125,6 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section id="about" className={IndexStyles.aboutWrapper}>
-        <div className={IndexStyles.about}>
-          <h1 className={IndexStyles.sectionHeader}>{data.contentfulAbout.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: data.contentfulAbout.content.childMarkdownRemark.html}} className={IndexStyles.contentBody}></div>
-        </div>
-        <div className={IndexStyles.whyUs}>
-          <div>
-            <BsAwardFill size={48} style={{fill:'#1D1D2C'}}/>
-            <h3 className={IndexStyles.sectionSubHeader}>Pawcar Quality Control</h3>
-            <p className={IndexStyles.contentBody}>We always insure that a product is free from any fault before the final purchase in order to eliminate any extra costs customers have to pay after delivery. We want you to enjoy your new purchase as soon as possible!</p>
-          </div>
-          <div>
-            <GiReceiveMoney size={48} style={{fill:'#1D1D2C'}}/>
-            <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3> 
-            <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important so our customers don’t have to compromise on any of it. Your satisfaction is our priority!</p>
-          </div>
-          <div>
-            <FaHandshake size={48} style={{fill:'#1D1D2C'}}/>
-            <h3 className={IndexStyles.sectionSubHeader}>Trust</h3>
-            <p className={IndexStyles.contentBody}>PAWCAR was est. in 2008 in Poland. Since then we have been serving customers from all over the world. It has been a learning experience to meet different challenging orders. Thank you for believing in us!</p>
-          </div>
-        </div>
-      </section>
-
-      
       <section id="contact" className={IndexStyles.contactWrapper}>
         <div className={IndexStyles.contact}>
           <h1 className={IndexStyles.sectionHeader}>Contact Us</h1>
