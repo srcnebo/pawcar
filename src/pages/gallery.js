@@ -22,7 +22,7 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <Head title="Home"/>
+      <Head title="Gallery"/>
       <div className={galleryStyles.galleryContainer}>
         <h2 className={galleryStyles.galleryHeading}>{data.contentfulGallery.gallery}</h2>
         <div className={galleryStyles.galleryGrid}>
