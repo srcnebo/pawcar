@@ -7,7 +7,7 @@
   min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 70% 50%; 
 }
 .content{
   position: absolute;
@@ -25,6 +25,7 @@
   line-height: 1.5;
 }
 .slogan{
+  text-transform: uppercase;
   font-weight: 700;
 }
 .subHeading{
@@ -39,7 +40,7 @@
   }
   .content{
     position: absolute;
-    max-width: 600px;
+    max-width: 760px;
     margin-left:10%;
     text-align: left;
 
@@ -48,15 +49,15 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     color: $color-white;
-    font-size: $h1-size;  
+    font-size: $h1-size*1.2;  
     line-height: 1.5;
   }
   .slogan{
     font-weight: 700;
   }
   .subHeading{
-    margin-top: 1.2rem;
-    font-size: $h2-size;
+    margin-top: 1rem;
+    font-size: $h2-size/1.1;
   }
 
 }
