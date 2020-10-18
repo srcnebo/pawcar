@@ -18,8 +18,8 @@ const IndexPage = () => {
         slogan
         subHeading
         heroImage{
-          resize (width: 1920, height: 1000){
-            src
+          fluid (maxWidth: 2560){
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -33,8 +33,8 @@ const IndexPage = () => {
                 }
               }
               image {
-                resize (width: 640, height: 426){
-                  src
+                fluid (maxWidth: 960){
+                  ...GatsbyContentfulFluid
                 }
               }
               systemName
@@ -78,7 +78,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home"/>
-      <Hero slogan={data.contentfulHero.slogan} image={data.contentfulHero.heroImage.resize.src} subHeading={data.contentfulHero.subHeading}/>
+      <Hero slogan={data.contentfulHero.slogan} image={data.contentfulHero.heroImage.fluid.src} subHeading={data.contentfulHero.subHeading}/>
 
       <section id="about" className={IndexStyles.aboutWrapper}>
         <div className={IndexStyles.about}>
@@ -89,17 +89,17 @@ const IndexPage = () => {
           <div>
             <BsAwardFill size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Quality Control</h3>
-            <p className={IndexStyles.contentBody}>We always insure that a product is free from any fault before the final purchase in order to eliminate any extra costs customers have to pay after delivery. We want you to enjoy your new purchase as soon as possible!</p>
+            <p className={IndexStyles.contentBody}>We always ensure that our products are free from any fault before the final purchase. It eliminates any extra costs customers have to pay after delivery. We want you to enjoy your new purchase as soon as possible!</p>
           </div>
           <div>
             <GiReceiveMoney size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3> 
-            <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important so our customers don’t have to compromise on any of it. Your satisfaction is our priority!</p>
+            <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important. As our customer you dont have to compromise on any of it. Your satisfaction is our priority!</p>
           </div>
           <div>
             <FaHandshake size={48} style={{fill:'#1D1D2C'}}/>
             <h3 className={IndexStyles.sectionSubHeader}>Trust</h3>
-            <p className={IndexStyles.contentBody}>PAWCAR was est. in 2008 in Poland. Since then we have been serving customers from all over the world. It has been a learning experience to meet different challenging orders. Thank you for believing in us!</p>
+            <p className={IndexStyles.contentBody}>PAWCAR was est. in 2010 in Poland. Thanks to chain of recommendations now we are serving customers from all over the world. No matter how demaning the order is, we deliver on time and within your budget. It's been 10 years, thank you for believing in us!</p>
           </div>
         </div>
       </section>
@@ -111,7 +111,7 @@ const IndexPage = () => {
             {servicesArray.map((edge, i)=>{
               return (
                 <div key={i} className={IndexStyles.servicesGrid}>
-                  <div className={IndexStyles.servicesImage} style={{backgroundImage:`url(${edge.node.image.resize.src})`}}></div>
+                  <div className={IndexStyles.servicesImage} style={{backgroundImage:`url(${edge.node.image.fluid.src})`}}></div>
                   <div>
                     <div className={IndexStyles.servicesText} id={edge.node.systemName}>
                       <h2 className={IndexStyles.sectionSubHeader}>{edge.node.title}</h2>

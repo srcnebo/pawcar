@@ -4,27 +4,59 @@
 .backgroundImage {
   position: relative;
   min-width: 100%;
-  min-height: 85vh;
+  min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 .content{
   position: absolute;
-  z-index: 0;
-  bottom: 80px;
+  max-width: 100%;
   margin: auto;
-  padding: 2.5rem 2rem;
-  color: $color-navy;
-  font-size: $h1-size;
-  background-color: rgba($color-white, 0.5);
+  text-align: center;
+
+
+  top: 55%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: $color-white;
+
+  font-size: 1.6rem;  
   line-height: 1.5;
-  
 }
 .slogan{
-  font-family: 'Oswald', sans-serif;
-  text-align: center;
+  font-weight: 700;
 }
 .subHeading{
-  font-size: $h2-size;
+  margin-top: 0.8rem;
+  font-size: $h2-size/1.5;
+}
+
+@media (min-width: 768px){
+
+  .backgroundImage {
+    min-height: 85vh;
+  }
+  .content{
+    position: absolute;
+    max-width: 600px;
+    margin-left:10%;
+    text-align: left;
+
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: $color-white;
+    font-size: $h1-size;  
+    line-height: 1.5;
+  }
+  .slogan{
+    font-weight: 700;
+  }
+  .subHeading{
+    margin-top: 1.2rem;
+    font-size: $h2-size;
+  }
+
 }

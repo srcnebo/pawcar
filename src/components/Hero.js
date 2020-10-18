@@ -6,7 +6,10 @@ const Hero = (props) => {
   return (
     <div className={HeroStyles.backgroundImage} 
       style={{
-        "backgroundImage": `url(${props.image})`
+        "backgroundImage": `linear-gradient(
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
+        ), url(${props.image})`
       }}>
       <div className={HeroStyles.content}>
         <h1 className={HeroStyles.slogan}>{props.slogan}</h1>
