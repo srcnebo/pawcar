@@ -28,6 +28,21 @@
   font-size: $h2-size;
   font-weight: 700;
 }
+.phoneField{
+  display: flex;
+  width: 185px;
+  margin: auto;
+}
+.footerIcon{
+  width: 30px;
+  margin-right: 10px;
+}
+.footerFlags{
+  width: 28px;
+  margin-right: 10px;
+}
+
+
 .credits{
   padding: .5rem;
   font-size: .8rem;
