@@ -24,6 +24,13 @@ const Footer = () => {
     }
   `)
 
+
+  const phoneNumber = data.contentfulFooter.phonePl; 
+  let chatDefault = phoneNumber.substring(1);
+  while (chatDefault.charAt(0) === "0"){
+    chatDefault = chatDefault.substring(1);
+  }
+
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.footerContainer}>
@@ -42,15 +49,16 @@ const Footer = () => {
             <img src={flagPl} className={footerStyles.footerFlags} alt="PL flag"/>
             <p>{data.contentfulFooter.phonePl}</p>
           </div>
-          <a href="mailto:o.wojcinski@gmail.com">o.wojcinski@gmail.com</a>
+          <a href={`mailto:${data.contentfulFooter.email}`}>{data.contentfulFooter.email}</a>
         </div>
         <div className={footerStyles.social}>
           <p className={footerStyles.contactHeading}>We are social</p>
-          <a href="https://www.facebook.com/mypawcar" aria-label="instagram" target="_blank" rel="noopener noreferrer"><img src={fbIcon} className={footerStyles.footerIcon}  alt="fb Icon"/></a>
+          <a href="https://www.facebook.com/mypawcar/" aria-label="facebook" target="_blank" rel="noopener noreferrer"><img src={fbIcon} className={footerStyles.footerIcon}  alt="fb Icon"/></a>
           <a href="https://www.instagram.com/mypawcar" aria-label="instagram" target="_blank" rel="noopener noreferrer"><img src={instaIcon} className={footerStyles.footerIcon}  alt="Insta Icon"/></a>
-          <a href="#" aria-label="viber" target="_blank" rel="noopener noreferrer"><img src={viber} className={footerStyles.footerIcon} alt="viber icon"/></a>
-          <a href="#" aria-label="whatsapp" target="_blank" rel="noopener noreferrer"><img src={whatsapp} className={footerStyles.footerIcon} alt="whatsapp icoin"/></a>
+          <a href={`viber://chat?number=${chatDefault}`} aria-label="viber" target="_blank" rel="noopener noreferrer"><img src={viber} className={footerStyles.footerIcon} alt="viber icon"/></a>
+          <a href={`https://wa.me/${chatDefault}`} aria-label="whatsapp" target="_blank" rel="noopener noreferrer"><img src={whatsapp} className={footerStyles.footerIcon} alt="whatsapp icoin"/></a>
         </div>
+        
       </div>
       <div className={footerStyles.credits}>
         <div>
