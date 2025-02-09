@@ -82,7 +82,7 @@ jobs:
           PREFIX_PATHS: 'true'
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        run: sleep 3 && ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
