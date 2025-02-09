@@ -25,7 +25,7 @@ const Footer = () => {
   `)
 
 
-  const phoneNumber = data.contentfulFooter.phonePl; 
+  const phoneNumber = data.contentfulFooter.phonePl;
   let chatDefault = phoneNumber.substring(1);
   while (chatDefault.charAt(0) === "0"){
     chatDefault = chatDefault.substring(1);
@@ -35,7 +35,7 @@ const Footer = () => {
     <footer className={footerStyles.footer}>
       <div className={footerStyles.footerContainer}>
         <div className={footerStyles.contacts}>
-          
+
           <p className={footerStyles.contactHeading}>Contact us</p>
           <div className={footerStyles.phoneField}>
             <img src={flagNg} className={footerStyles.footerFlags} alt="NG flag"/>
@@ -58,9 +58,9 @@ const Footer = () => {
           <a href={`viber://chat?number=${chatDefault}`} aria-label="viber" target="_blank" rel="noopener noreferrer"><img src={viber} className={footerStyles.footerIcon} alt="viber icon"/></a>
           <a href={`https://wa.me/${chatDefault}`} aria-label="whatsapp" target="_blank" rel="noopener noreferrer"><img src={whatsapp} className={footerStyles.footerIcon} alt="whatsapp icoin"/></a>
         </div>
-        
+
       </div>
-      <div className={footerStyles.credits}>
+      {/* <div className={footerStyles.credits}>
         <div>
           <p>
             Designed and developed by{" "}
@@ -72,7 +72,7 @@ const Footer = () => {
             </a>{" "}
           </p>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }
