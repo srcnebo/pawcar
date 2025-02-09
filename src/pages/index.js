@@ -73,7 +73,7 @@ const IndexPage = () => {
   // Filter empty elements
   servicesArray = servicesArray.filter(() => true);
 
-  
+
 
   return (
     <Layout>
@@ -93,7 +93,7 @@ const IndexPage = () => {
           </div>
           <div>
             <GiReceiveMoney size={48} style={{fill:'#1D1D2C'}}/>
-            <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3> 
+            <h3 className={IndexStyles.sectionSubHeader}>Value for Money</h3>
             <p className={IndexStyles.contentBody}>We consider three major factors when purchasing vehicles: safety, style, and budget are equally important. As our customer you dont have to compromise on any of it. Your satisfaction is our priority!</p>
           </div>
           <div>
@@ -125,12 +125,12 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section id="contact" className={IndexStyles.contactWrapper}>
+      {/* <section id="contact" className={IndexStyles.contactWrapper}>
         <div className={IndexStyles.contact}>
           <h1 className={IndexStyles.sectionHeader}>Contact Us</h1>
           <ContactForm/>
         </div>
-      </section>
+      </section> */}
 
     </Layout>
   )

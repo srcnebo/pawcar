@@ -113,9 +113,9 @@ const Header = () => {
           <Link className="navbar-item" to="/gallery">
             Gallery
           </Link>
-          <AnchorLink className="navbar-item" to="/#contact">
+          {/* <AnchorLink className="navbar-item" to="/#contact">
             Contact
-          </AnchorLink>
+          </AnchorLink> */}
         </div>
       </div>
     </nav>
