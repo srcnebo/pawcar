@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: 'Pawcar',
-    author: "Steve Nebo"
+    author: "Steven Nebo"
   },
   plugins: [
     `gatsby-plugin-anchor-links`,
@@ -15,6 +15,7 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        environment: process.env.CONTENTFUL_ENVIRONMENT || 'master'
       }
     },
     'gatsby-plugin-sass',
@@ -41,16 +42,18 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`400`, `500`, `700`],
+    process.env.DISABLE_GOOGLE_FONTS_PREFETCH !== "true"
+      ? {
+          resolve: `gatsby-plugin-prefetch-google-fonts`,
+          options: {
+            fonts: [
+              {
+                family: `Poppins`,
+                variants: [`400`, `500`, `700`],
+              }
+            ]
           },
-        ]
-      }
-    }
-  ],
+        }
+      : null,
+  ].filter(Boolean),
 }
