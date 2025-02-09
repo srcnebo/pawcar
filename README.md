@@ -1,12 +1,42 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-**Start developing.**
+**Start Site.**
+  # A simple Gatsby Site
 
-    Navigate into your new site’s directory and start it up.
+  ## How to run
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+  Ensure correct Node.js version (e.g., v14)
+  ```
+  nvm use 14
+  ```
+
+  Ensure that npm config points to a python 3 executable.
+  ```
+  npm config set python /usr/bin/python3
+  ```
+
+  Copy the .example.env and set the environment variables.
+  ```
+  cp .example.env .env
+  ```
+
+  Clean installation
+  ```
+  npm install
+  ```
+
+  If there are errors on optional packages
+  ```
+  npm install --ignore-optional
+  ```
+  for a temporary workaround
+
+  Start the development server
+  ```
+  npm start
+  ```
+
+  ## Deploy
+
 
  **Open the source code and start editing!**
 
