@@ -1,6 +1,5 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-**Start Site.**
-  # A simple Gatsby Site
+  # Pawcargroup - A simple brochure website
 
   ## How to run
 
